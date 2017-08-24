@@ -26,6 +26,4 @@ public interface LoginMvpPresenter<V extends LoginMvpView> extends MvpPresenter<
 
     void startLogin(String emailId);
 
-    String showSavedEmail();
-
 }

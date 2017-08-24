@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~    Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
   ~
   ~    Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,20 +15,19 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
+        android:id="@+id/textViewShow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewShow"/>
-
-
+        android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/buttonLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonLogout"
-        android:text="Logout"/>
+        android:text="Logout" />
 
 </LinearLayout>

@@ -36,9 +36,4 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V> imp
         getMvpView().openMainActivity();
     }
 
-    @Override
-    public String showSavedEmail() {
-        return getDataManager().getEmailId();
-    }
-
 }

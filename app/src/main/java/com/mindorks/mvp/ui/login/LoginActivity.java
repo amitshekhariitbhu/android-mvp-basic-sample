@@ -66,7 +66,6 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
             }
         });
 
-        editTextEmail.setText(loginPresenter.showSavedEmail());
     }
 
     @Override
