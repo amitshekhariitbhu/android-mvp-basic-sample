@@ -14,20 +14,26 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp;
+package com.mindorks.mvp.utils;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ * Created by gaura on 24-08-2017.
  */
-public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+
+public class CommonUtils {
+
+    public static boolean isEmailValid(String email) {
+        Pattern pattern;
+        Matcher matcher;
+        final String EMAIL_PATTERN =
+                "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(email);
+        return matcher.matches();
     }
+
 }
