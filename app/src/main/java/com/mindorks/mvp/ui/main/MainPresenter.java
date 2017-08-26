@@ -37,7 +37,6 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> imple
     @Override
     public void setUserLoggedOut() {
         getDataManager().clear();
-        getDataManager().setLoggedOut();
         getMvpView().openSplashActivity();
     }
 

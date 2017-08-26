@@ -28,6 +28,9 @@ import static android.content.Context.MODE_PRIVATE;
 public class SharedPrefsHelper {
 
     public static final String MY_PREFS = "MY_PREFS";
+
+    public static final String EMAIL = "EMAIL";
+
     SharedPreferences mSharedPreferences;
 
     public SharedPrefsHelper(Context context) {
@@ -38,12 +41,12 @@ public class SharedPrefsHelper {
         mSharedPreferences.edit().clear().apply();
     }
 
-    public void put(String key, String value) {
-        mSharedPreferences.edit().putString(key, value).apply();
+    public void putEmail(String email) {
+        mSharedPreferences.edit().putString(EMAIL, email).apply();
     }
 
-    public String get(String key, String defaultValue) {
-        return mSharedPreferences.getString(key, defaultValue);
+    public String getEmail() {
+        return mSharedPreferences.getString(EMAIL, null);
     }
 
     public boolean getLoggedInMode() {

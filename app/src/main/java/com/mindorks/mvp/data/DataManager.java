@@ -33,19 +33,15 @@ public class DataManager {
     }
 
     public void saveEmailId(String email) {
-        mSharedPrefsHelper.put("EMAIL", email);
+        mSharedPrefsHelper.putEmail(email);
     }
 
     public String getEmailId() {
-        return mSharedPrefsHelper.get("EMAIL", null);
+        return mSharedPrefsHelper.getEmail();
     }
 
     public void setLoggedIn() {
         mSharedPrefsHelper.setLoggedInMode(true);
-    }
-
-    public void setLoggedOut() {
-        mSharedPrefsHelper.setLoggedInMode(false);
     }
 
     public Boolean getLoggedInMode() {
