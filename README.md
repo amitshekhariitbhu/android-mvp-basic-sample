@@ -5,6 +5,8 @@
 [![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects)
 [![Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
 
+<img src=https://raw.githubusercontent.com/MindorksOpenSource/android-mvp-basic-sample/master/assets/mvp.png >
+
 [Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
 ### License
