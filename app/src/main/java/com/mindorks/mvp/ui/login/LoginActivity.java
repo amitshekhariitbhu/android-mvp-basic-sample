@@ -16,6 +16,7 @@
 
 package com.mindorks.mvp.ui.login;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,12 +28,11 @@ import android.widget.Toast;
 import com.mindorks.mvp.MvpApp;
 import com.mindorks.mvp.R;
 import com.mindorks.mvp.data.DataManager;
-import com.mindorks.mvp.ui.base.BaseActivity;
 import com.mindorks.mvp.ui.main.MainActivity;
 import com.mindorks.mvp.utils.CommonUtils;
 
 
-public class LoginActivity extends BaseActivity implements LoginMvpView {
+public class LoginActivity extends Activity implements LoginMvpView {
 
     LoginPresenter loginPresenter;
 
