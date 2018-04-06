@@ -16,6 +16,7 @@
 
 package com.mindorks.mvp.ui.main;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,14 +28,13 @@ import android.widget.TextView;
 import com.mindorks.mvp.MvpApp;
 import com.mindorks.mvp.R;
 import com.mindorks.mvp.data.DataManager;
-import com.mindorks.mvp.ui.base.BaseActivity;
 import com.mindorks.mvp.ui.splash.SplashActivity;
 
 /**
  * Created by gaura on 23-08-2017.
  */
 
-public class MainActivity extends BaseActivity implements MainMvpView {
+public class MainActivity extends Activity implements MainMvpView {
 
     TextView textViewShow;
     Button buttonLogout;
@@ -59,7 +59,6 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
         textViewShow.setText(mainPresenter.getEmailId());
-
 
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
