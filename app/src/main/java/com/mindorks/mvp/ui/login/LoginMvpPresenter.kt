@@ -14,32 +14,16 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp;
+package com.mindorks.mvp.ui.login
 
-import android.app.Application;
-
-import com.mindorks.mvp.data.DataManager;
-import com.mindorks.mvp.data.SharedPrefsHelper;
+import com.mindorks.mvp.ui.base.MvpPresenter
 
 /**
- * Created by gaura on 23-08-2017.
+ * Created by gaura on 22-08-2017.
  */
 
-public class MvpApp extends Application {
+interface LoginMvpPresenter<V : LoginMvpView> : MvpPresenter<V> {
 
-    DataManager dataManager;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-        SharedPrefsHelper sharedPrefsHelper = new SharedPrefsHelper(getApplicationContext());
-        dataManager = new DataManager(sharedPrefsHelper);
-
-    }
-
-    public DataManager getDataManager() {
-        return dataManager;
-    }
+    fun startLogin(emailId: String)
 
 }

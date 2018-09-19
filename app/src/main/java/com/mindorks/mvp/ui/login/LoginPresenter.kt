@@ -14,30 +14,21 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.main;
+package com.mindorks.mvp.ui.login
 
-import com.mindorks.mvp.data.DataManager;
-import com.mindorks.mvp.ui.base.BasePresenter;
+import com.mindorks.mvp.data.DataManager
+import com.mindorks.mvp.ui.base.BasePresenter
 
 /**
- * Created by gaura on 23-08-2017.
+ * Created by gaura on 22-08-2017.
  */
 
-public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> implements MainMvpPresenter<V> {
+class LoginPresenter<V : LoginMvpView>(dataManager: DataManager) : BasePresenter<V>(dataManager), LoginMvpPresenter<V> {
 
-    public MainPresenter(DataManager dataManager) {
-        super(dataManager);
-    }
-
-    @Override
-    public String getEmailId() {
-        return getDataManager().getEmailId();
-    }
-
-    @Override
-    public void setUserLoggedOut() {
-        getDataManager().clear();
-        getMvpView().openSplashActivity();
+    override fun startLogin(emailId: String) {
+        dataManager.saveEmailId(emailId)
+        dataManager.setLoggedIn()
+        mvpView!!.openMainActivity()
     }
 
 }

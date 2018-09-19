@@ -14,18 +14,27 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.splash;
+package com.mindorks.mvp
 
-import com.mindorks.mvp.ui.base.MvpView;
+import android.app.Application
+
+import com.mindorks.mvp.data.DataManager
+import com.mindorks.mvp.data.SharedPrefsHelper
 
 /**
  * Created by gaura on 23-08-2017.
  */
 
-public interface SplashMvpView extends MvpView {
+class MvpApp : Application() {
 
-    void openMainActivity();
+    lateinit var dataManager: DataManager
 
-    void openLoginActivity();
+    override fun onCreate() {
+        super.onCreate()
+
+        val sharedPrefsHelper = SharedPrefsHelper(applicationContext)
+        dataManager = DataManager(sharedPrefsHelper)
+
+    }
 
 }

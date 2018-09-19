@@ -14,26 +14,21 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.login;
+package com.mindorks.mvp
 
-import com.mindorks.mvp.data.DataManager;
-import com.mindorks.mvp.ui.base.BasePresenter;
+import org.junit.Test
+
+import org.junit.Assert.*
 
 /**
- * Created by gaura on 22-08-2017.
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * @see [Testing documentation](http://d.android.com/tools/testing)
  */
-
-public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V> implements LoginMvpPresenter<V> {
-
-    public LoginPresenter(DataManager dataManager) {
-        super(dataManager);
+class ExampleUnitTest {
+    @Test
+    @Throws(Exception::class)
+    fun addition_isCorrect() {
+        assertEquals(4, (2 + 2).toLong())
     }
-
-    @Override
-    public void startLogin(String emailId) {
-        getDataManager().saveEmailId(emailId);
-        getDataManager().setLoggedIn();
-        getMvpView().openMainActivity();
-    }
-
 }

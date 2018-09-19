@@ -14,19 +14,16 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.login;
+package com.mindorks.mvp.ui.splash
 
-import com.mindorks.mvp.ui.base.MvpView;
+import com.mindorks.mvp.ui.base.MvpPresenter
 
 /**
- * Created by gaura on 22-08-2017.
+ * Created by gaura on 23-08-2017.
  */
 
-public interface LoginMvpView extends MvpView {
+interface SplashMvpPresenter<V : SplashMvpView> : MvpPresenter<V> {
 
-    void openMainActivity();
-
-    void onLoginButtonClick();
+    fun decideNextActivity()
 
 }
-

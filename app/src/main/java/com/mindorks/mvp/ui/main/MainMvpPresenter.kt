@@ -14,18 +14,18 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.main;
+package com.mindorks.mvp.ui.main
 
-import com.mindorks.mvp.ui.base.MvpPresenter;
+import com.mindorks.mvp.ui.base.MvpPresenter
 
 /**
  * Created by gaura on 23-08-2017.
  */
 
-public interface MainMvpPresenter<V extends MainMvpView> extends MvpPresenter<V> {
+interface MainMvpPresenter<V : MainMvpView> : MvpPresenter<V> {
 
-    String getEmailId();
+    val emailId: String
 
-    void setUserLoggedOut();
+    fun setUserLoggedOut()
 
 }

@@ -14,26 +14,22 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.utils;
+package com.mindorks.mvp.ui.splash
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import com.mindorks.mvp.data.DataManager
+import com.mindorks.mvp.ui.base.BasePresenter
 
 /**
- * Created by gaura on 24-08-2017.
+ * Created by gaura on 23-08-2017.
  */
 
-public class CommonUtils {
+class SplashPresenter<V : SplashMvpView>(dataManager: DataManager) : BasePresenter<V>(dataManager), SplashMvpPresenter<V> {
 
-    public static boolean isEmailValid(String email) {
-        Pattern pattern;
-        Matcher matcher;
-        final String EMAIL_PATTERN =
-                "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-        pattern = Pattern.compile(EMAIL_PATTERN);
-        matcher = pattern.matcher(email);
-        return matcher.matches();
+    override fun decideNextActivity() {
+        if (dataManager.loggedInMode!!) {
+            mvpView!!.openMainActivity()
+        } else {
+            mvpView!!.openLoginActivity()
+        }
     }
-
 }

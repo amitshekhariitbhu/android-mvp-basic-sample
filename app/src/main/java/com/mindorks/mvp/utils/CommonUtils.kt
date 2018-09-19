@@ -14,14 +14,24 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.base;
+package com.mindorks.mvp.utils
+
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 /**
- * Created by gaura on 22-08-2017.
+ * Created by gaura on 24-08-2017.
  */
 
-public interface MvpPresenter<V extends MvpView> {
+object CommonUtils {
 
-    void onAttach(V mvpView);
+    fun isEmailValid(email: String): Boolean {
+        val pattern: Pattern
+        val matcher: Matcher
+        val EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+        pattern = Pattern.compile(EMAIL_PATTERN)
+        matcher = pattern.matcher(email)
+        return matcher.matches()
+    }
 
 }

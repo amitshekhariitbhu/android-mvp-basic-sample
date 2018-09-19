@@ -14,37 +14,14 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.data;
+package com.mindorks.mvp.ui.base
 
 /**
  * Created by gaura on 22-08-2017.
  */
 
-public class DataManager {
+interface MvpPresenter<V : MvpView> {
 
-    SharedPrefsHelper mSharedPrefsHelper;
+    fun onAttach(mvpView: V)
 
-    public DataManager(SharedPrefsHelper sharedPrefsHelper) {
-        mSharedPrefsHelper = sharedPrefsHelper;
-    }
-
-    public void clear() {
-        mSharedPrefsHelper.clear();
-    }
-
-    public void saveEmailId(String email) {
-        mSharedPrefsHelper.putEmail(email);
-    }
-
-    public String getEmailId() {
-        return mSharedPrefsHelper.getEmail();
-    }
-
-    public void setLoggedIn() {
-        mSharedPrefsHelper.setLoggedInMode(true);
-    }
-
-    public Boolean getLoggedInMode() {
-        return mSharedPrefsHelper.getLoggedInMode();
-    }
 }

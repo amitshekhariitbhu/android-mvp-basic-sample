@@ -14,34 +14,18 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.base;
+package com.mindorks.mvp.ui.splash
 
-import com.mindorks.mvp.data.DataManager;
+import com.mindorks.mvp.ui.base.MvpView
 
 /**
- * Created by gaura on 22-08-2017.
+ * Created by gaura on 23-08-2017.
  */
 
-public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
+interface SplashMvpView : MvpView {
 
-    DataManager mDataManager;
-    private V mMvpView;
+    fun openMainActivity()
 
+    fun openLoginActivity()
 
-    public BasePresenter(DataManager dataManager) {
-        mDataManager = dataManager;
-    }
-
-    @Override
-    public void onAttach(V mvpView) {
-        mMvpView = mvpView;
-    }
-
-    public V getMvpView() {
-        return mMvpView;
-    }
-
-    public DataManager getDataManager() {
-        return mDataManager;
-    }
 }

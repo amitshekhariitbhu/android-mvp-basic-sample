@@ -14,27 +14,16 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.splash;
+package com.mindorks.mvp.ui.main
 
-import com.mindorks.mvp.data.DataManager;
-import com.mindorks.mvp.ui.base.BasePresenter;
+import com.mindorks.mvp.ui.base.MvpView
 
 /**
  * Created by gaura on 23-08-2017.
  */
 
-public class SplashPresenter<V extends SplashMvpView> extends BasePresenter<V> implements SplashMvpPresenter<V> {
+interface MainMvpView : MvpView {
 
-    public SplashPresenter(DataManager dataManager) {
-        super(dataManager);
-    }
+    fun openSplashActivity()
 
-    @Override
-    public void decideNextActivity() {
-        if (getDataManager().getLoggedInMode()) {
-            getMvpView().openMainActivity();
-        } else {
-            getMvpView().openLoginActivity();
-        }
-    }
 }

@@ -14,16 +14,19 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.login;
+package com.mindorks.mvp.ui.login
 
-import com.mindorks.mvp.ui.base.MvpPresenter;
+import com.mindorks.mvp.ui.base.MvpView
 
 /**
  * Created by gaura on 22-08-2017.
  */
 
-public interface LoginMvpPresenter<V extends LoginMvpView> extends MvpPresenter<V> {
+interface LoginMvpView : MvpView {
 
-    void startLogin(String emailId);
+    fun openMainActivity()
+
+    fun onLoginButtonClick()
 
 }
+

@@ -14,20 +14,10 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp;
-
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+package com.mindorks.mvp.ui.base
 
 /**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ * Created by gaura on 22-08-2017.
  */
-public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
-    }
-}
+
+interface MvpView

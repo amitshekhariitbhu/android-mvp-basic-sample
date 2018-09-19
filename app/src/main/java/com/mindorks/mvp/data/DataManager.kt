@@ -14,12 +14,29 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.base;
+package com.mindorks.mvp.data
 
 /**
  * Created by gaura on 22-08-2017.
  */
 
-public interface MvpView {
+class DataManager(private var mSharedPrefsHelper: SharedPrefsHelper) {
 
+    val emailId: String
+        get() = mSharedPrefsHelper.email
+
+    val loggedInMode: Boolean?
+        get() = mSharedPrefsHelper.loggedInMode
+
+    fun clear() {
+        mSharedPrefsHelper.clear()
+    }
+
+    fun saveEmailId(email: String) {
+        mSharedPrefsHelper.putEmail(email)
+    }
+
+    fun setLoggedIn() {
+        mSharedPrefsHelper.loggedInMode = true
+    }
 }

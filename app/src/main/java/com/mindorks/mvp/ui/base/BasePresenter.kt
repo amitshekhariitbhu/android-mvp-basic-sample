@@ -14,16 +14,24 @@
  *    limitations under the License.
  */
 
-package com.mindorks.mvp.ui.main;
+package com.mindorks.mvp.ui.base
 
-import com.mindorks.mvp.ui.base.MvpView;
+import com.mindorks.mvp.data.DataManager
 
 /**
- * Created by gaura on 23-08-2017.
+ * Created by gaura on 22-08-2017.
  */
 
-public interface MainMvpView extends MvpView {
+open class BasePresenter<V : MvpView>(dataManager: DataManager) : MvpPresenter<V> {
 
-    void openSplashActivity();
+    var dataManager: DataManager
+    var mvpView: V? = null
 
+    init {
+        this.dataManager = dataManager
+    }
+
+    override fun onAttach(mvpView: V) {
+        this.mvpView = mvpView
+    }
 }
