@@ -7,6 +7,9 @@
 
 <img src=https://raw.githubusercontent.com/MindorksOpenSource/android-mvp-basic-sample/master/assets/mvp.png >
 
+
+### Learn to build a ride-sharing Android app like Uber, Lyft - [Check here](https://github.com/MindorksOpenSource/ridesharing-uber-lyft-app)
+
 [Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
 ### License
